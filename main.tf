@@ -23,8 +23,9 @@ resource "aws_sqs_queue" "cron_sqs_dlq" {
 }
 
 resource "aws_sqs_queue" "cron_sqs" {
-  name = var.name
-  tags = var.tags
+  name                       = var.name
+  visibility_timeout_seconds = var.sqs_visibility_timeout_seconds
+  tags                       = var.tags
   redrive_policy = jsonencode({
     deadLetterTargetArn = aws_sqs_queue.cron_sqs_dlq.arn
     maxReceiveCount     = var.sqs_retry_count
