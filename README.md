@@ -5,10 +5,10 @@ Terraform module to provision an AWS Cloudwatch Event which posts directly to an
 ## Usage
 
 ```hcl
-module "cron_sqs" {
-  source = "github.com/spanio/terraform-aws-cloudwatch-event-sqs"
-  name = "cron-driven-sqs"
-  cloudwatch_event_rule_schedule_expression = "cron(* * * * ? *)"
+module "cloudwatch-event-sqs" {
+  source  = "spanio/cloudwatch-event-sqs/aws"
+  version = "1.0.1"
+  # insert the 1 required variable here
 }
 ```
 
