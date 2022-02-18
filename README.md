@@ -7,7 +7,7 @@ Terraform module to provision an AWS Cloudwatch Event which posts directly to an
 ```hcl
 module "cloudwatch-event-sqs" {
   source  = "spanio/cloudwatch-event-sqs/aws"
-  version = "1.0.1"
+  version = "1.2"
   # insert the 1 required variable here
 }
 ```
@@ -34,7 +34,6 @@ module "cloudwatch-event-sqs" {
 | [aws_cloudwatch_event_rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) |
 | [aws_cloudwatch_event_target](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) |
 
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -50,4 +49,5 @@ module "cloudwatch-event-sqs" {
 | Name | Description |
 |------|-------------|
 | sqs_arn | The ARN of the generated SQS queue |
+| queue_url | The URL for the generated SQS queue |
 | sqs_dlq_arn | The ARN of the generated SQS DLQ queue |
