@@ -6,9 +6,10 @@ Terraform module to provision an AWS Cloudwatch Event which posts directly to an
 
 ```hcl
 module "cloudwatch-event-sqs" {
-  source  = "spanio/cloudwatch-event-sqs/aws"
-  version = "1.2"
-  # insert the 1 required variable here
+  source                                    = "spanio/cloudwatch-event-sqs/aws"
+  version                                   = "1.2"
+  cloudwatch_event_rule_schedule_expression = "<cron expression>"
+  # specify other inputs here, as required
 }
 ```
 
